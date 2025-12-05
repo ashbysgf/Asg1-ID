@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monochrome Midnight — Home</title>
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Monochrome Midnight — PAYMENT</title>
+</head>
+
+<body>
+
+<div class = logo></div>
+
+<header>
+  <nav class = "navbar">
+      <a href="index.html" class="active">HOME</a>
+      <a href="tickets.html">TICKETS</a>
+      <a href="merch.html">SHOP</a>
+      <a href="cart.html">CART</a>
+      <a href="payment.html">PAYMENT</a>
+  </nav>
+</header>
+
+<section class="payment-section">
+  <h1>PAYMENT DETAILS</h1>
+
+  <form class="payment-form">
+
+    <label for="card-name">Name on Card</label>
+    <input id="card-name" type="text" placeholder="Full Name">
+
+    <label for="email">Email</label>
+    <input id="email" type="email" placeholder="Email Address">
+
+    <label for="card-number">Card Number</label>
+    <input id="card-number" type="text" placeholder="1234 5678 9012 3456">
+
+    <div class="row">
+      <div class="col">
+        <label for="expiry">Expiry</label>
+        <input id="expiry" type="text" placeholder="MM/YY">
+      </div>
+
+      <div class="col">
+        <label for="cvv">CVV</label>
+        <input id="cvv" type="text" placeholder="123">
+      </div>
+    </div>
+
+    <label for="amount">Amount</label>
+    <input id="amount" type="text" placeholder="$0.00">
+
+    <button type="submit">Submit Payment</button>
+
+  </form>
+</section>
+
+<script src="js/main.js"></script>
+<script src="js/payment.js"></script>
+
+</body>
+</html>

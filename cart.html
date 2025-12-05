@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CART</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class = logo></div>
+
+<header>
+  <nav class = "navbar">
+      <a href="index.html" class="active">HOME</a>
+      <a href="tickets.html">TICKETS</a>
+      <a href="merch.html">SHOP</a>
+      <a href="cart.html">CART</a>
+      <a href="payment.html">PAYMENT</a>
+  </nav>
+</header>
+
+<section class="cart-section">
+  <h1>YOUR CART</h1>
+
+  <!-- JS will populate cart items here -->
+  <div id="cart-list" class="cart-items-container"></div>
+
+  <!-- Total -->
+  <div class="cart-total">
+    <h3>Total: <span id="cart-total">$0.00</span></h3>
+  </div>
+
+  <a href="payment.html" class="checkout-btn">Proceed to Payment</a>
+</section>
+
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+<script>
+  loadCart();
+</script>
+
+</body>
+</html>
