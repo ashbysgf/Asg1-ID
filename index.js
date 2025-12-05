@@ -1,18 +1,40 @@
-// Function to highlight active nav link
-document.addEventListener("DOMContentLoaded", () => {
-  const currentPage = location.pathname.split("/").pop();
-  document.querySelectorAll("nav a").forEach(link => {
-    if (link.getAttribute("href") === currentPage) {
-      link.classList.add("active");
-    }
-  });
+// Get elements
+const popup = document.getElementById("newsletterPopup");
+const closeBtn = document.getElementById("closePopup");
+const subscribeBtn = document.getElementById("subscribeBtn");
+const emailInput = document.getElementById("newsletterEmail");
+const message = document.getElementById("popupMessage");
+
+// Show popup after 2 seconds (or immediately if you prefer)
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        popup.style.display = "flex";
+    }, 2000);
 });
 
-// Cart functions accessible globally
-function getCart() {
-  return JSON.parse(localStorage.getItem("cart")) || [];
-}
+// Close popup when clicking X
+closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+});
 
-function saveCart(cart) {
-  localStorage.setItem("cart", JSON.stringify(cart));
-}
+// Subscribe button
+subscribeBtn.addEventListener("click", () => {
+    const email = emailInput.value.trim();
+
+    if (email) {
+        alert(`Thank you! ${email} has been subscribed.`);
+        message.textContent = "You are now subscribed!";
+        message.style.color = "green";
+        emailInput.value = ""; // Clear input
+        popup.style.display = "none"; // Close popup
+    } else {
+        alert("Please enter a valid email address.");
+    }
+});
+
+// Optional: click outside popup to close
+window.addEventListener("click", (e) => {
+    if (e.target === popup) {
+        popup.style.display = "none";
+    }
+});

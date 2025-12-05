@@ -1,78 +1,58 @@
-// Get cart from localStorage or create empty array
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+const output = document.getElementById("cartItems");
+const addBtn = document.getElementById("addButton");
+const item = document.getElementById("item");
+const quantity = document.getElementById("quantity");
+const totalDisplay = document.getElementById("cart-total"); // new
 
-// Save cart back to localStorage
-function saveCart() {
-  localStorage.setItem("cart", JSON.stringify(cart));
+// Function to display the list directly from localStorage
+function displayList() {
+    const saved = localStorage.getItem("myList");
+    let total = 0; // total amount
+
+    if (saved) {
+        const list = JSON.parse(saved);
+
+        // Display items
+        output.textContent = list.map(item => {
+            total += item.qty * 10; // assuming price = $10 per item
+            return `${item.name} (x${item.qty}) - $${(item.qty * 10).toFixed(2)}`;
+        }).join("\n");
+    } else {
+        output.textContent = "";
+    }
+
+    // Update total display
+    totalDisplay.textContent = total.toFixed(2);
 }
 
-// Add item to cart
-function addToCart(name, price, image) {
-  const existing = cart.find(item => item.name === name);
+// Load saved list on page load
+displayList();
 
-  if (existing) {
-    existing.quantity++;
-  } else {
-    cart.push({
-      name: name,
-      price: price,
-      quantity: 1,
-      image: image
-    });
-  }
+// Add new item
+addBtn.addEventListener("click", () => {
+    const value = item.value.trim();
+    const qty = parseInt(quantity.value) || 1; // default 1 if empty or invalid
 
-  saveCart();
-  alert("Item added to cart!");
-}
+    if (value !== "") {
+        let list = [];
+        const saved = localStorage.getItem("myList");
+        if (saved) list = JSON.parse(saved);
 
-// Display cart items
-function loadCart() {
-  const container = document.getElementById("cart-list");
-  const totalBox = document.getElementById("cart-total");
+        // Check if item already exists
+        const existing = list.find(i => i.name.toLowerCase() === value.toLowerCase());
+        if (existing) {
+            existing.qty += qty; // increment quantity
+        } else {
+            list.push({ name: value, qty: qty });
+        }
 
-  container.innerHTML = "";
-  let total = 0;
+        localStorage.setItem("myList", JSON.stringify(list));
 
-  if (cart.length === 0) {
-    container.innerHTML = "<p>Your cart is empty.</p>";
-    totalBox.innerText = "$0.00";
-    return;
-  }
+        item.value = "";
+        quantity.value = "";
 
-  cart.forEach((item, index) => {
-    const cost = item.price * item.quantity;
-    total += cost;
-
-    container.innerHTML += `
-      <div class="cart-item">
-        <img src="${item.image}" class="cart-img">
-        <div class="cart-info">
-          <h2>${item.name}</h2>
-          <p>$${item.price.toFixed(2)}</p>
-
-          <label>Quantity:</label>
-          <input type="number" min="1" value="${item.quantity}"
-            onchange="updateQuantity(${index}, this.value)">
-
-          <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
-        </div>
-      </div>
-    `;
-  });
-
-  totalBox.innerText = "$" + total.toFixed(2);
-}
-
-// Update quantity
-function updateQuantity(index, qty) {
-  cart[index].quantity = parseInt(qty);
-  saveCart();
-  loadCart();
-}
-
-// Remove item
-function removeItem(index) {
-  cart.splice(index, 1);
-  saveCart();
-  loadCart();
-}
+        displayList();
+    } else {
+        alert("Please enter an item name.");
+    }
+});

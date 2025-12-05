@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CART</title>
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
+  <title>Monochrome Midnight — HOME</title>
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -21,24 +24,36 @@
   </nav>
 </header>
 
-<section class="cart-section">
-  <h1>YOUR CART</h1>
+<main>
+  <!-- Input area for adding items manually -->
+  <section class="input-section">
+    <h2>Add Item to Cart</h2>
+    <div class="input-group">
+      <input type="text" id="item" placeholder="Insert item name here">
+      <input type="number" id="quantity" placeholder="Insert quantity here" min="1">
+      <button id="addButton">Add Item</button>
+    </div>
+  </section>
 
-  <!-- JS will populate cart items here -->
-  <div id="cart-list" class="cart-items-container"></div>
+  <!-- Display current items from LocalStorage -->
+  <section class="cart-section">
+    <h1>Your Cart</h1>
+    <div id="cartItems" class="cart-items-container"></div>
 
-  <!-- Total -->
-  <div class="cart-total">
-    <h3>Total: <span id="cart-total">$0.00</span></h3>
-  </div>
+    <!-- Total -->
+    <div class="cart-total">
+      <h3>Total: $<span id="cart-total">0.00</span></h3>
+    </div>
 
-  <a href="payment.html" class="checkout-btn">Proceed to Payment</a>
-</section>
+    <a href="payment.html" class="checkout-btn">Proceed to Payment</a>
+  </section>
+</main>
 
-<script src="js/main.js"></script>
-<script src="js/cart.js"></script>
+<!-- Scripts -->
+<script src="script.js"></script>
+<script src="cart.js"></script>
 <script>
-  loadCart();
+  loadCart(); // Populate cart if cart.js defines this function
 </script>
 
 </body>
