@@ -4,28 +4,39 @@ My project is to promote and create a website dedicated just for a band, Monochr
 Context: Their previous website developer had left the Monochrome Midnight's website as a mess, combining main page together with both tour-related stuff and the Monochrome Midnight's merchandises. Thus, I am hired to essentially "clean up".
 
 # DESIGN PROCESS
+This website's design process is through using Weekly CAs as foundation. For inspirations and guides, I had referred to W3Schools website (touched on HTML, CSS, JS), and used ChatGPT to give me suggestions and corrections. I also consulted my Peer Tutor (senior) to guide me on hard coding, because ChatGPT's method did not give me the design outcome I wanted (Particularly for my Home page).
+
+The user of my website is for fans and potential fans who wish to learn more about Monochrome Midnight's history
+and who the band members are. To booking them for shows, I had put the band's email at the footer, very bottom of all the pages (excluding Payment page).
+
+Additionally, Monochrome Midnight is interested in selling more of their music/merchandise and getting more gigs. Thus, I created more tour tickets and merchandises. By putting the navigation bar at the top, users can easily switch between the pages and fulfill payment. If they are interested in something to buy, they can add to cart and then proceed to payment.
+
 Provide us insights about your design process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
+I hope to make my website as functional and as easy to be used as possible, fulfilling all the requirements users and the band wants to have.
 
-As a user type, I want to perform an action, so that I can achieve a goal.
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory) Include the Adobe XD wireframe as a folder. You can include the XD share url.
+Figma: https://www.figma.com/design/cz6K7pZ0SrFl7Y5MQX2i1h/ASG-1---BAND?node-id=0-1&t=kS1dOTzBzLagmIzd-1
 
 # FEATURES
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
+Navigation bar and logo: to move around to different pages.
 
-Existing Features:
-Feature 1 - allows users X to achieve Y, by having them fill out Z
-...
+Home page: scroll to read about the band, get a look of their faces and names and then at the bottom is the footer which linked to social media and email. At the New Single Out Now, the Out Now is linked to Spotify.
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future ---
-Features Left to Implement:
-Another feature idea 
+Tickets page: to look at the venues, countries, dates and amount of the tickets. can press add to cart, which redirects page.
+
+Shop page: where the merchandises are at. can scroll and look at what is available to be bought. add tocart button redirects to cart page also.
+
+Cart page: essentially, whatever is desired to be bought can be typed out and added to the list. afterwards, can press Proceed to Payment to get redirected to Payment page
+
+Payment page: can fill in the form and then type the total amount of what is being bought (already calculated at the cart page) before clicking pay.
+
+Features Left to Implement: make my cart and payment to be better. I think my validation was not done super accurately. make my tickets page to emphasise on the currency.
 
     # pages
     - index.html (Homepage)
     - tickets.html (Concert Tickets)
     - shop.html (Merchandise)
+    - cart.html (Cart)
     - payment.html (Mock Payment Page)
 
     # notes
@@ -36,7 +47,6 @@ Another feature idea
     - Folders must be organised (html, css, etc)
 
 # TECHNOLOGIES USED
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
 
 - Weekly CAs (HTML and CSS):
     1. Week 2 
@@ -76,22 +86,9 @@ In this section, you should mention all of the languages, frameworks, libraries,
     6. https://chatgpt.com/share/69355a6e-4c74-800d-a32f-63ba6b49e4be (complete assistance of Payment JS, figuring out what went wrong and how to connect with my Cart HTML+JS)
 
 # TESTING
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
-
-Contact form:
-Go to the "Contact Us" page
-Try to submit the empty form and verify that an error message about the required fields appears
-Try to submit the form with an invalid email address and verify that a relevant error message appears
-Try to submit the form with all inputs valid and verify that a success message appears.
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+For testing, I was lost on how to make my cart work like other websites, but since my knowledge on LocalStorage was new, I left it be. Same as for my Payment. As for other pages, they worked well on my browser, so I did not have any issues.
 
 # CREDITS
-Content:
-The text for section Y was copied from the Wikipedia article Z
 
 Media:
 1. https://fercoseating.com/files/gallery/project/sgmarinabaysands2.jpg (Singapore hall)
@@ -101,4 +98,8 @@ Media:
 5. https://media.istockphoto.com/id/1227545308/photo/stage-for-live-concert-online-transmission-business-concept-for-a-concert-online-production.jpg?s=612x612&w=0&k=20&c=VdwVzNir08FTw3Oe0tvzCIuBCb25ZdVYogFd2kOZUEA= (Welcome Banner)
 
 Acknowledgements:
-I received inspiration for this project from X
+I received inspiration for this project from:
+1.	https://tour.thenbhd.com/
+2.	https://www.theweeknd.com/tour/
+3.	https://ukstore.chaseatlantic.com/ (redirected to UK store)
+4.	https://storeuk.taylorswift.com/collections/all-music
